@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FORGE | Luxury Café Experience</title>
+  <title>FORGE ROYAL CAFÉ</title>
 
-  <!-- GOOGLE FONT -->
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- FONT AWESOME -->
   <link rel="stylesheet"
@@ -25,25 +25,20 @@
     }
 
     body{
-      background:#050505;
-      color:white;
+      background:#efe4d2;
       font-family:'Poppins',sans-serif;
+      color:#2b1d0e;
       overflow-x:hidden;
     }
 
-    ::selection{
-      background:#d4af37;
-      color:black;
-    }
-
-    /* SCROLLBAR */
+    /* SCROLL */
 
     ::-webkit-scrollbar{
       width:8px;
     }
 
     ::-webkit-scrollbar-thumb{
-      background:#d4af37;
+      background:linear-gradient(#c89b3c,#f1d18a);
       border-radius:10px;
     }
 
@@ -51,24 +46,25 @@
 
     nav{
       position:fixed;
-      width:100%;
       top:0;
-      z-index:999;
-      padding:22px 7%;
+      width:100%;
+      z-index:1000;
+      padding:20px 7%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      backdrop-filter:blur(12px);
-      background:rgba(0,0,0,0.35);
-      border-bottom:1px solid rgba(255,255,255,0.08);
+      background:rgba(239,228,210,0.85);
+      backdrop-filter:blur(15px);
+      border-bottom:1px solid rgba(201,155,60,0.3);
+      animation:fadeDown 1s ease;
     }
 
     .logo{
-      font-size:2.3rem;
-      font-family:'Cormorant Garamond', serif;
+      font-size:2.6rem;
+      font-family:'Cinzel',serif;
       font-weight:700;
-      letter-spacing:3px;
-      color:#fff;
+      letter-spacing:4px;
+      color:#7a4b00;
     }
 
     .logo span{
@@ -83,21 +79,21 @@
 
     nav ul li a{
       text-decoration:none;
-      color:white;
+      color:#4b2d12;
       font-weight:500;
       position:relative;
       transition:0.4s;
     }
 
     nav ul li a:hover{
-      color:#d4af37;
+      color:#c89b3c;
     }
 
     nav ul li a::after{
       content:'';
       width:0%;
       height:2px;
-      background:#d4af37;
+      background:#c89b3c;
       position:absolute;
       left:0;
       bottom:-6px;
@@ -120,45 +116,42 @@
       overflow:hidden;
     }
 
-    .hero video{
+    .hero::before{
+      content:'';
       position:absolute;
       width:100%;
       height:100%;
-      object-fit:cover;
+      background:
+      linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2000&auto=format&fit=crop')
+      center/cover;
+      animation:zoomBg 18s infinite alternate;
       z-index:-2;
     }
 
-    .overlay{
-      position:absolute;
-      width:100%;
-      height:100%;
-      background:linear-gradient(to top,#000 5%,rgba(0,0,0,0.45));
-      z-index:-1;
-    }
-
     .hero-content{
-      max-width:900px;
-      animation:fadeUp 1.4s ease;
+      max-width:950px;
+      color:white;
       padding:20px;
+      animation:fadeUp 1.5s ease;
     }
 
     .hero-content h1{
       font-size:6rem;
-      font-family:'Cormorant Garamond', serif;
-      font-weight:700;
-      line-height:1;
+      font-family:'Cinzel',serif;
+      line-height:1.1;
       margin-bottom:25px;
-      letter-spacing:4px;
+      text-shadow:0 10px 30px rgba(0,0,0,0.5);
     }
 
     .hero-content h1 span{
-      color:#d4af37;
+      color:#f3d58a;
     }
 
     .hero-content p{
       font-size:1.2rem;
-      color:#ddd;
-      line-height:1.8;
+      line-height:2;
+      color:#f1f1f1;
       margin-bottom:40px;
     }
 
@@ -173,24 +166,30 @@
       padding:16px 38px;
       border-radius:50px;
       text-decoration:none;
-      color:white;
       font-weight:600;
-      transition:0.4s;
-      border:2px solid #d4af37;
+      transition:0.5s;
+      border:2px solid #e3b85b;
+      position:relative;
+      overflow:hidden;
     }
 
-    .gold{
-      background:#d4af37;
-      color:black;
+    .gold-btn{
+      background:linear-gradient(45deg,#c89b3c,#f3d58a);
+      color:#2b1d0e;
+      box-shadow:0 10px 30px rgba(201,155,60,0.4);
     }
 
-    .gold:hover{
-      background:transparent;
+    .gold-btn:hover{
+      transform:translateY(-5px) scale(1.03);
+      box-shadow:0 15px 40px rgba(201,155,60,0.6);
+    }
+
+    .outline-btn{
       color:white;
-      transform:translateY(-5px);
+      background:transparent;
     }
 
-    .dark:hover{
+    .outline-btn:hover{
       background:#d4af37;
       color:black;
       transform:translateY(-5px);
@@ -209,15 +208,16 @@
 
     .section-title h2{
       font-size:4rem;
-      font-family:'Cormorant Garamond', serif;
+      font-family:'Cinzel',serif;
+      color:#7a4b00;
       margin-bottom:15px;
     }
 
     .section-title p{
-      color:#bdbdbd;
       max-width:750px;
       margin:auto;
-      line-height:1.8;
+      color:#5e4a37;
+      line-height:2;
     }
 
     /* ABOUT */
@@ -232,49 +232,56 @@
     .about img{
       width:100%;
       border-radius:25px;
-      box-shadow:0 20px 50px rgba(212,175,55,0.15);
+      box-shadow:0 20px 60px rgba(0,0,0,0.15);
+      transition:0.5s;
+    }
+
+    .about img:hover{
+      transform:scale(1.03);
     }
 
     .about-text h3{
-      font-size:2.5rem;
+      font-size:3rem;
+      font-family:'Cinzel',serif;
+      color:#7a4b00;
       margin-bottom:25px;
-      font-family:'Cormorant Garamond', serif;
     }
 
     .about-text p{
-      color:#d7d7d7;
       line-height:2;
+      color:#5e4a37;
       margin-bottom:20px;
     }
 
-    /* EXPERIENCE */
+    /* CARDS */
 
-    .experience{
-      background:#0b0b0b;
+    .menu-section{
+      background:#f7efe2;
     }
 
     .cards{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:35px;
     }
 
     .card{
-      background:linear-gradient(145deg,#111,#191919);
+      background:#fff8ee;
       border-radius:25px;
       overflow:hidden;
       transition:0.5s;
-      border:1px solid rgba(255,255,255,0.05);
+      border:1px solid rgba(201,155,60,0.2);
+      position:relative;
     }
 
     .card:hover{
       transform:translateY(-12px);
-      box-shadow:0 25px 50px rgba(212,175,55,0.15);
+      box-shadow:0 25px 60px rgba(201,155,60,0.25);
     }
 
     .card img{
       width:100%;
-      height:300px;
+      height:320px;
       object-fit:cover;
     }
 
@@ -285,102 +292,89 @@
     .card-content h3{
       font-size:2rem;
       margin-bottom:15px;
-      font-family:'Cormorant Garamond', serif;
+      color:#7a4b00;
+      font-family:'Cinzel',serif;
     }
 
     .card-content p{
-      color:#cfcfcf;
-      line-height:1.8;
+      color:#5e4a37;
+      line-height:1.9;
     }
 
-    /* LUXURY STATS */
+    /* PARALLAX */
 
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:30px;
+    .luxury-banner{
+      height:70vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=2000&auto=format&fit=crop')
+      center/cover fixed;
+      display:flex;
+      justify-content:center;
+      align-items:center;
       text-align:center;
+      color:white;
+      padding:30px;
     }
 
-    .stat-box{
-      padding:50px;
-      border-radius:25px;
-      background:#111;
-      transition:0.4s;
+    .luxury-banner h2{
+      font-size:5rem;
+      font-family:'Cinzel',serif;
+      margin-bottom:20px;
     }
 
-    .stat-box:hover{
-      transform:translateY(-10px);
-      background:#151515;
-    }
-
-    .stat-box h2{
-      color:#d4af37;
-      font-size:3.5rem;
-      margin-bottom:10px;
-      font-family:'Cormorant Garamond', serif;
-    }
-
-    .stat-box p{
-      color:#ccc;
+    .luxury-banner p{
+      max-width:850px;
+      margin:auto;
+      line-height:2;
+      font-size:1.1rem;
     }
 
     /* GALLERY */
 
-    .gallery-grid{
+    .gallery{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
       gap:25px;
     }
 
-    .gallery-grid img{
+    .gallery img{
       width:100%;
       height:320px;
       object-fit:cover;
       border-radius:20px;
-      transition:0.5s;
+      transition:0.6s;
     }
 
-    .gallery-grid img:hover{
-      transform:scale(1.03);
-    }
-
-    /* TESTIMONIAL */
-
-    .testimonial{
-      background:
-      linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
-      url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop')
-      center/cover;
-      text-align:center;
-      border-radius:30px;
-      margin:80px;
-      padding:100px 40px;
-    }
-
-    .testimonial h2{
-      font-size:4rem;
-      font-family:'Cormorant Garamond', serif;
-      margin-bottom:20px;
-    }
-
-    .testimonial p{
-      color:#ddd;
-      max-width:800px;
-      margin:auto;
-      line-height:2;
-      margin-bottom:35px;
+    .gallery img:hover{
+      transform:scale(1.04);
+      filter:brightness(1.1);
     }
 
     /* CONTACT */
 
-    .contact-box{
+    .contact{
+      background:#f7efe2;
+      border-radius:30px;
       text-align:center;
-      line-height:2.4;
+      padding:80px;
+    }
+
+    .contact h2{
+      font-size:4rem;
+      font-family:'Cinzel',serif;
+      color:#7a4b00;
+      margin-bottom:25px;
+    }
+
+    .contact p{
+      color:#5e4a37;
+      line-height:2;
+      margin-bottom:15px;
       font-size:1.1rem;
     }
 
-    .contact-box i{
+    .contact i{
       color:#d4af37;
       margin-right:10px;
     }
@@ -388,14 +382,11 @@
     /* FOOTER */
 
     footer{
-      padding:50px 8%;
+      padding:40px;
       text-align:center;
-      border-top:1px solid rgba(255,255,255,0.06);
-      background:#050505;
-    }
-
-    footer p{
-      color:#9d9d9d;
+      background:#e8d9c1;
+      color:#5e4a37;
+      margin-top:80px;
     }
 
     /* FLOATING ICONS */
@@ -417,11 +408,11 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      text-decoration:none;
       color:white;
+      text-decoration:none;
       font-size:1.4rem;
       transition:0.4s;
-      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
     }
 
     .floating a:hover{
@@ -440,21 +431,36 @@
       background:#4285F4;
     }
 
-    .playstore{
-      background:#111;
-    }
-
-    /* ANIMATION */
+    /* ANIMATIONS */
 
     @keyframes fadeUp{
       from{
         opacity:0;
-        transform:translateY(40px);
+        transform:translateY(50px);
       }
-
       to{
         opacity:1;
         transform:translateY(0);
+      }
+    }
+
+    @keyframes fadeDown{
+      from{
+        opacity:0;
+        transform:translateY(-40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes zoomBg{
+      from{
+        transform:scale(1);
+      }
+      to{
+        transform:scale(1.1);
       }
     }
 
@@ -467,15 +473,19 @@
       }
 
       .hero-content h1{
-        font-size:3.8rem;
+        font-size:3.5rem;
       }
 
       .section-title h2{
         font-size:3rem;
       }
 
-      .testimonial{
-        margin:25px;
+      .luxury-banner h2{
+        font-size:3rem;
+      }
+
+      .contact{
+        padding:50px 25px;
       }
     }
 
@@ -495,9 +505,8 @@
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#menu">Signature Menu</a></li>
+      <li><a href="#menu">Menu</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#experience">Luxury Experience</a></li>
       <li><a href="#contact">Reservations</a></li>
     </ul>
 
@@ -507,29 +516,28 @@
 
   <section class="hero" id="home">
 
-    <video autoplay muted loop playsinline>
-      <source
-      src="https://cdn.coverr.co/videos/coverr-barista-preparing-coffee-1566637901794?download=1080p"
-      type="video/mp4">
-    </video>
-
-    <div class="overlay"></div>
-
     <div class="hero-content">
 
       <h1>
-        Billionaire <span>Café</span> Experience
+        Billionaire <span>Café</span><br>
+        Experience
       </h1>
 
       <p>
-        Forge is not just a café. It is a luxury lifestyle destination crafted
-        for visionaries, creators, entrepreneurs, and elite coffee lovers who
-        appreciate elegance, aesthetics, and unforgettable experiences.
+        Welcome to Forge Royal Café — a premium luxury destination where
+        elegance, coffee culture, aesthetics, and elite experiences meet.
       </p>
 
       <div class="hero-buttons">
-        <a href="#menu" class="btn gold">Explore Menu</a>
-        <a href="#contact" class="btn dark">Reserve Table</a>
+
+        <a href="#menu" class="btn gold-btn">
+          Explore Menu
+        </a>
+
+        <a href="#contact" class="btn outline-btn">
+          Reserve Table
+        </a>
+
       </div>
 
     </div>
@@ -545,34 +553,35 @@
       <h2>About Forge</h2>
 
       <p>
-        A premium luxury café designed with billionaire aesthetics,
-        golden interiors, curated music, elite coffee, and handcrafted culinary experiences.
+        Designed with royal beige aesthetics and luxury golden ambience,
+        Forge creates unforgettable moments with handcrafted coffee,
+        premium dining, and elite interiors.
       </p>
 
     </div>
 
     <div class="about">
 
-      <img
-      src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1600&auto=format&fit=crop"
-      alt="Luxury Cafe">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1600&auto=format&fit=crop">
 
       <div class="about-text">
 
-        <h3>Luxury Crafted To Perfection</h3>
+        <h3>Royal Luxury Vibes</h3>
 
         <p>
-          Forge combines modern luxury architecture with timeless café culture.
-          Every corner is designed for elegance — from ambient lighting and
-          marble interiors to premium handcrafted beverages.
+          Every detail inside Forge is crafted with sophistication —
+          from marble textures and luxury lights to curated café music
+          and premium handcrafted beverages.
         </p>
 
         <p>
-          Whether you come for coffee, meetings, dates, or late-night conversations,
-          Forge creates an unforgettable luxury atmosphere.
+          Whether it’s meetings, dates, celebrations, or luxury chill nights,
+          Forge delivers an elite atmosphere like no other.
         </p>
 
-        <a href="#" class="btn gold">Visit Forge</a>
+        <a href="#" class="btn gold-btn">
+          Discover More
+        </a>
 
       </div>
 
@@ -582,14 +591,14 @@
 
   <!-- MENU -->
 
-  <section class="experience" id="menu">
+  <section class="menu-section" id="menu">
 
     <div class="section-title">
 
-      <h2>Signature Experience</h2>
+      <h2>Luxury Signature Menu</h2>
 
       <p>
-        Curated luxury flavors and premium handcrafted beverages for elite taste.
+        Crafted for elite taste with premium ingredients and luxury presentation.
       </p>
 
     </div>
@@ -598,17 +607,14 @@
 
       <div class="card">
 
-        <img
-        src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop"
-        alt="Coffee">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop">
 
         <div class="card-content">
 
-          <h3>Luxury Coffee</h3>
+          <h3>Golden Latte</h3>
 
           <p>
-            Imported coffee beans brewed by master baristas delivering a rich,
-            smooth, and premium taste experience.
+            Rich espresso blended with golden caramel and creamy luxury textures.
           </p>
 
         </div>
@@ -617,17 +623,14 @@
 
       <div class="card">
 
-        <img
-        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop"
-        alt="Interior">
+        <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1600&auto=format&fit=crop">
 
         <div class="card-content">
 
-          <h3>Royal Interiors</h3>
+          <h3>Royal Desserts</h3>
 
           <p>
-            Billionaire-inspired architecture with luxury lighting,
-            premium seating, and elegant ambiance.
+            Signature handcrafted desserts made for luxury experiences.
           </p>
 
         </div>
@@ -636,17 +639,14 @@
 
       <div class="card">
 
-        <img
-        src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1600&auto=format&fit=crop"
-        alt="Dessert">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop">
 
         <div class="card-content">
 
-          <h3>Elite Desserts</h3>
+          <h3>Luxury Interiors</h3>
 
           <p>
-            Signature desserts crafted with premium ingredients for a
-            luxurious gourmet experience.
+            Billionaire-inspired ambience with elegant royal café aesthetics.
           </p>
 
         </div>
@@ -657,31 +657,18 @@
 
   </section>
 
-  <!-- STATS -->
+  <!-- PARALLAX -->
 
-  <section>
+  <section class="luxury-banner">
 
-    <div class="stats">
+    <div>
 
-      <div class="stat-box">
-        <h2>25K+</h2>
-        <p>Luxury Guests</p>
-      </div>
+      <h2>Where Royalty Meets Coffee</h2>
 
-      <div class="stat-box">
-        <h2>150+</h2>
-        <p>Premium Dishes</p>
-      </div>
-
-      <div class="stat-box">
-        <h2>5★</h2>
-        <p>Elite Experience</p>
-      </div>
-
-      <div class="stat-box">
-        <h2>24/7</h2>
-        <p>Luxury Vibes</p>
-      </div>
+      <p>
+        Forge is more than a café — it’s a lifestyle destination designed
+        for luxury lovers, creators, entrepreneurs, and unforgettable nights.
+      </p>
 
     </div>
 
@@ -696,46 +683,22 @@
       <h2>Forge Gallery</h2>
 
       <p>
-        Experience elegance, luxury interiors, and aesthetic premium vibes.
+        Premium interiors, aesthetic café vibes, and unforgettable luxury moments.
       </p>
 
     </div>
 
-    <div class="gallery-grid">
+    <div class="gallery">
 
-      <img
-      src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop"
-      alt="">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=1600&auto=format&fit=crop">
 
-      <img
-      src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600&auto=format&fit=crop"
-      alt="">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600&auto=format&fit=crop">
 
-      <img
-      src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1600&auto=format&fit=crop"
-      alt="">
+      <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1600&auto=format&fit=crop">
 
-      <img
-      src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1600&auto=format&fit=crop"
-      alt="">
+      <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?q=80&w=1600&auto=format&fit=crop">
 
     </div>
-
-  </section>
-
-  <!-- EXPERIENCE -->
-
-  <section class="testimonial" id="experience">
-
-    <h2>Where Billionaires Chill</h2>
-
-    <p>
-      Forge is built for those who appreciate premium aesthetics,
-      meaningful conversations, luxury experiences, and unforgettable nights.
-      More than a café — Forge is a lifestyle.
-    </p>
-
-    <a href="#" class="btn gold">Book Luxury Table</a>
 
   </section>
 
@@ -743,23 +706,21 @@
 
   <section id="contact">
 
-    <div class="section-title">
+    <div class="contact">
 
-      <h2>Reservations</h2>
-
-      <p>
-        Reserve your premium luxury experience at Forge.
-      </p>
-
-    </div>
-
-    <div class="contact-box">
+      <h2>Reserve Your Luxury Experience</h2>
 
       <p><i class="fa-solid fa-location-dot"></i> Hyderabad, India</p>
 
       <p><i class="fa-solid fa-phone"></i> +91 9876543210</p>
 
       <p><i class="fa-solid fa-envelope"></i> forgecafe@gmail.com</p>
+
+      <br>
+
+      <a href="#" class="btn gold-btn">
+        Book A Table
+      </a>
 
     </div>
 
@@ -769,17 +730,14 @@
 
   <footer>
 
-    <p>
-      © 2026 FORGE Luxury Café. Crafted For Elite Experiences.
-    </p>
+    © 2026 FORGE Royal Café • Crafted For Elite Experiences
 
   </footer>
 
-  <!-- FLOATING ICONS -->
+  <!-- FLOATING BUTTONS -->
 
   <div class="floating">
 
-    <!-- WHATSAPP -->
     <a href="https://wa.me/919876543210"
     class="whatsapp"
     target="_blank">
@@ -788,7 +746,6 @@
 
     </a>
 
-    <!-- INSTAGRAM -->
     <a href="https://instagram.com"
     class="instagram"
     target="_blank">
@@ -797,24 +754,11 @@
 
     </a>
 
-    <!-- MAPS -->
     <a href="https://maps.google.com"
     class="maps"
     target="_blank">
 
       <i class="fa-solid fa-location-dot"></i>
-
-    </a>
-
-    <!-- PLAYSTORE -->
-    <a href="https://play.google.com/store"
-    class="playstore"
-    target="_blank">
-
-      <img
-      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-      width="32"
-      alt="Play Store">
 
     </a>
 
