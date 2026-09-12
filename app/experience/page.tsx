@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function Experience(){return <main className="site"><section className="section story" style={{minHeight:'100vh'}}><div><div className="kicker">05 / Experience</div><h1 className="display">Enter the forge.</h1><p className="body">An immersive café environment where coffee, fire, music and Italian design meet. The full interactive 3D room is the next production layer.</p><Link href="/" className="button">← Back to FORGE</Link></div></section></main>}
